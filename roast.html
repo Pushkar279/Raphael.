@@ -3,74 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 AI Roast Generator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>🔥 Roast Generator 🔥</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #ff4757;
+        }
+        #roast-box {
+            font-size: 24px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #222;
+            border-radius: 10px;
+            width: 80%;
+            min-height: 50px;
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            width: 60%;
+            margin: 10px 0;
+        }
+        button {
+            background: #ff4757;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e84118;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>🔥 AI Roast Generator 🔥</h1>
-    <button onclick="generateRoast()">Get Roasted</button>
-    <div id="output"></div>
-    <nav><a href="index.html">🏠 Back to Home</a></nav>
-</div>
+    <h1>🔥 Roast Generator 🔥</h1>
+    <p>Enter your name to get roasted:</p>
+    <input type="text" id="name-input" placeholder="Your name...">
+    <button onclick="generateRoast()">Roast Me!</button>
+    
+    <div id="roast-box"></div>
 
-<script>
-function generateRoast() {
-    let name = prompt("Enter your name, victim:");
-    if (!name) {
-        alert("Enter a name!");
-        return;
-    }
+    <script>
+        const roasts = [
+            "You're like a cloud. When you disappear, it's a beautiful day!",
+            "You bring everyone so much joy… when you leave the room.",
+            "Your secrets are safe with me. I never even listen when you tell me them.",
+            "You're proof that even evolution takes breaks.",
+            "I'd agree with you, but then we’d both be wrong.",
+            "You're like a penny—two-faced and not worth much.",
+            "You're not stupid; you just have bad luck thinking.",
+            "I'd explain it to you, but I left my crayons at home.",
+            "Your jokes are like expired milk—nobody finds them funny, and they make people sick.",
+            "You're like a software update—nobody wants you, but we have to tolerate you.",
+            "You're proof that even clowns need an understudy.",
+            "You have something on your chin... no, the third one.",
+            "Your WiFi signal is stronger than your personality.",
+            "You're so irrelevant, even your shadow leaves you behind.",
+            "Your comebacks are so weak, even your reflection ignores you.",
+            "You're the human version of a broken pencil—pointless.",
+            "Your dreams are so small, even ants laugh at them.",
+            "You’re so fake, even Photoshop can’t fix you.",
+            "You're like a bad Wi-Fi connection—annoying, unreliable, and slowing everyone down.",
+            "You have the charm of a 404 error page—completely useless.",
+            "You have so many failed attempts, even CAPTCHA thinks you’re a bot.",
+            "You're the reason why instruction manuals have warning labels.",
+            "Your voice could make a happy meal depressed.",
+            "You're like a TikTok trend—annoying and forgotten in a week.",
+            "If I had a dollar for every smart thing you said, I’d be broke.",
+            "You're about as useful as a screen door on a submarine.",
+            "You're so slow, even snails send you motivational quotes.",
+            "You're like a broken clock—wrong all the time but still trying to be relevant.",
+            "Your life is like a YouTube tutorial… nobody makes it to the end."
+        ];
 
-    let roasts = [
-        "You're like a cloud. When you disappear, it's a beautiful day!",
-        "You bring everyone so much joy… when you leave the room.",
-        "Your WiFi signal is stronger than your personality.",
-        "Your secrets are safe with me. I never even listen when you tell me them.",  
-        "You're proof that even evolution takes breaks.",  
-        "I'd agree with you, but then we’d both be wrong.",  
-        "You're like a penny—two-faced and not worth much.",  
-        "You're not stupid; you just have bad luck thinking.",  
-        "I'd explain it to you, but I left my crayons at home.",  
-        "Your jokes are like expired milk—nobody finds them funny, and they make people sick.",  
-        "You're like a software update—nobody wants you, but we have to tolerate you.",  
-        "You're proof that even clowns need an understudy.",  
-        "You have something on your chin... no, the third one.",  
-        "Your secrets are safe with me. I wasn’t even listening.",  
-        "You're like a penny—shiny, but absolutely worthless.",  
-        "You're slower than a YouTube ad without a skip button.",  
-        "You're like a participation trophy—no one really wants you, but you're just there.",  
-        "You have something on your face… oh wait, that’s just your personality.",  
-        "I’d roast you, but I don’t want to waste my good material on side characters.",  
-        "Your WiFi signal is stronger than your personality.",  
-        "You bring people together... just to talk about how annoying you are.",  
-        "Your personality is like a Windows update—nobody wants it, but we’re forced to deal with it.",  
-        "You're proof that even Google can’t find everything useful.",  
-        "You're so irrelevant, even your shadow leaves you behind.",  
-        "Your comebacks are so weak, even your reflection ignores you.",  
-        "You're the human version of a broken pencil—pointless.",  
-        "You're like a math problem—nobody likes you, and you make people's heads hurt.",  
-        "Your dreams are so small, even ants laugh at them.",  
-        "You’re so fake, even Photoshop can’t fix you.",  
-        "You're like a bad Wi-Fi connection—annoying, unreliable, and slowing everyone down.",  
-        "You have the charm of a 404 error page—completely useless.",  
-        "You have so many failed attempts, even CAPTCHA thinks you’re a bot.",  
-        "You're the reason why instruction manuals have warning labels.",  
-        "Your voice could make a happy meal depressed.",  
-        "You have a great face… for radio.",  
-        "You're like a TikTok trend—annoying and forgotten in a week.",  
-        "If I had a dollar for every smart thing you said, I’d be broke.",  
-        "You're about as useful as a screen door on a submarine.",  
-        "You're so slow, even snails send you motivational quotes.",  
-        "You're like a broken clock—wrong all the time but still trying to be relevant.",  
-        "Your life is like a YouTube tutorial… nobody makes it to the end."  
-    ];
-
-    let roast = getRandomItem(roasts);
-    document.getElementById("output").innerHTML = `<p>🔥 ${name}, ${roast} 🔥</p>`;
-}
-</script>
+        function generateRoast() {
+            const name = document.getElementById("name-input").value || "Victim";
+            const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+            document.getElementById("roast-box").innerHTML = `<strong>${name},</strong> ${randomRoast} 🔥`;
+        }
+    </script>
 
 </body>
 </html>
