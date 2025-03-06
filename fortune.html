@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 Fortune Teller</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🔮 Fortune Teller 🔮</h1>
+    <button onclick="tellFortune()">Reveal Your Fortune</button>
+    <div id="output"></div>
+    <nav><a href="index.html">🏠 Back to Home</a></nav>
+</div>
+
+<script>
+function tellFortune() {
+    let name = prompt("Enter your name:");
+    if (!name) {
+        alert("Enter your name!");
+        return;
+    }
+
+    let fortunes = [
+        "🔮 I see a pizza in your future... and it’s Hawaiian. I’m so sorry.",
+        "💖 The stars say you’ll find true love... right after you stop swiping left on everyone.",
+        "😴 I foresee a nap in your near future. The universe demands it.",
+        "📱 You will soon receive a text from someone you miss... it’s your mom asking if you’ve eaten yet.",
+        "🎟️ The crystal ball shows you winning the lottery... but then losing the ticket. Better luck next time!",
+        "📶 I see a great adventure ahead... or it’s just your Wi-Fi cutting out again.",
+        "🏆 You will achieve greatness... right after you stop binge-watching Netflix.",
+        "⏰ The cards say you’re destined for success... but only if you stop hitting snooze.",
+        "📦 I foresee a mysterious stranger entering your life... it’s probably just a delivery guy with your food.",
+        "🩺 The stars say you’ll live a long life... but only if you stop Googling your symptoms.",
+        "🚀 The cards say you’ll die peacefully in your sleep... unlike your passengers.",
+        "🚗 The cards say you’ll die surrounded by loved ones... because you never learned to drive properly.",
+        "⏳ You will achieve your dreams... just in time for the heat death of the universe.",
+        "🤦 I foresee a long life... but it’ll feel even longer because of your poor life choices.",
+        "😆 The stars say you’ll find happiness... but only after you stop reading these depressing fortunes.",
+        "🚑 You will soon meet someone who changes your life... probably by hitting you with their car.",
+        "📜 The crystal ball shows you’ll be remembered forever... as a cautionary tale.",
+        "🏃 I see a great journey ahead... but it’s just you running from your problems.",
+        "💰 You will soon inherit a fortune... from a relative you didn’t even know existed.",
+        "🚀 The cards say you’ll die peacefully in your sleep... unlike your passengers."
+    ];
+
+    let fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+
+    document.getElementById("output").innerHTML = `<p>🔮 ${name}, your fortune: <br>➡ ${fortune}</p>`;
+}
+</script>
+
+</body>
+</html>

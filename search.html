@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 Fake Google Search Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🔍 Fake Google Search History Generator 🔍</h1>
+    <button onclick="generateSearchHistory()">Reveal Your Last Searches</button>
+    <div id="output"></div>
+    <nav><a href="index.html">🏠 Back to Home</a></nav>
+</div>
+
+<script>
+function generateSearchHistory() {
+    let name = prompt("Enter your name:");
+    if (!name) {
+        alert("Enter your name!");
+        return;
+    }
+
+    let fakeSearches = [
+        "How to get rich overnight?",
+        "Why does my crush ignore me?",
+        "Can I marry an anime character?",
+        "How to grow taller at 25?",
+        "Do aliens exist or am I paranoid?",
+        "Can I survive on only Maggi?",
+        "Why am I so lazy?",
+        "How to convince parents to buy a PS5?",
+        "How to become a millionaire without working?",
+        "How to make a fake ID?",
+        "How to unburn toast?",
+        "Can I eat soup with a fork?",
+        "Why does my cat judge me?",
+        "How to become a potato farmer in 24 hours?",
+        "Is it illegal to marry a tree?",
+        "How to stop plants from gossiping?",
+        "Can I sell my soul for free Wi-Fi?",
+        "Why do I cry when I see bread?",
+        "How to train a goldfish to fetch?",
+        "Can I sue my alarm clock?",
+        "Why do I feel like a loaf of bread in a world of cake?",
+        "How to become a professional napper and never wake up?",
+        "Can I pay rent with memes and existential dread?",
+        "How to convince my dog I’m the alpha when I’m clearly not?",
+        "Why do I feel like a Sim being controlled by a bored teenager?",
+        "How to stop my microwave from judging my life choices?",
+        "Can I legally change my name to 'Spicy Nugget' and start over?",
+        "How to survive a zombie apocalypse with only a spoon?",
+        "Why do I feel like a background character in my own life?",
+        "How to make my Wi-Fi faster by yelling at it until it listens?",
+        "Can I adopt a penguin and make it my only friend in this cold world?",
+        "How to stop my fridge from eating my leftovers and my will to live?",
+        "Why do I feel like a potato with anxiety and no purpose?",
+        "How to become a pirate in the 21st century and escape society?"
+    ];
+
+    let searchResults = fakeSearches.sort(() => 0.5 - Math.random()).slice(0, 5);
+    let formattedResults = searchResults.map((s, i) => `<p>${i + 1}. ${s}</p>`).join("");
+
+    document.getElementById("output").innerHTML = `<p>📜 ${name}, your last 5 Google searches:</p>${formattedResults}`;
+}
+</script>
+
+</body>
+</html>

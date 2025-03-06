@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☠️ Dumb Death Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>☠️ Dumb Death Predictor ☠️</h1>
+    <button onclick="predictDeath()">Find Out Your Dumb Death</button>
+    <div id="output"></div>
+    <nav><a href="index.html">🏠 Back to Home</a></nav>
+</div>
+
+<script>
+function predictDeath() {
+    let name = prompt("Enter your name:");
+    if (!name) {
+        alert("Enter your name!");
+        return;
+    }
+
+    let dumbDeaths = [
+        "Choking on gum. 🍬",
+        "Laughing too hard at your own jokes. 🤣",
+        "Tripping over a charger. 🔌",
+        "Phone exploding while watching YouTube. 📱💥",
+        "Hit by a self-driving car… you were inside. 🚗",
+        "Turning into a chip after eating too many. 🍟",
+        "Starving while deciding what to eat. 🤦‍♂️",
+        "Lost in a mall, becoming a legend. 🏢",
+        "Rage-quitting a game so hard your heart stops. 🎮💀",
+        "Forgetting to breathe while overthinking. 🤯",
+        "Crushed by a vending machine. 🥤",
+        "Jumping off the edge to prove Earth is flat. 🌍",
+        "Struck by lightning yelling, 'What are the odds?!' ⚡",
+        "Eaten by squirrels you tried to befriend. 🐿️",
+        "Drowning in tears from a sad movie. 🎬💧",
+        "Buried alive by a sandcastle. 🏖️",
+        "Outrunning a tornado on a tricycle. 🌪️",
+        "Poisoned by expired energy drinks. 🥤",
+        "Crushed by a falling piano. 🎹",
+        "Abducted by aliens mistaking you for an idiot. 👽"
+    ];
+
+    let deathPrediction = dumbDeaths[Math.floor(Math.random() * dumbDeaths.length)];
+
+    document.getElementById("output").innerHTML = `<p>☠️ ${name}, your dumb death: <br>➡ ${deathPrediction}</p>`;
+}
+</script>
+
+</body>
+</html>

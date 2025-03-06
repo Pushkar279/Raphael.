@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💼 Future Job Predictor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>💼 Future Job Predictor 💼</h1>
+    <button onclick="predictJob()">Find Your Future Job</button>
+    <div id="output"></div>
+    <nav><a href="index.html">🏠 Back to Home</a></nav>
+</div>
+
+<script>
+function predictJob() {
+    let name = prompt("Enter your name:");
+    if (!name) {
+        alert("Enter your name!");
+        return;
+    }
+
+    let jobs = [
+        "Billionaire 💰", "CEO of Tesla 2.0 🚀", "Hollywood Actor 🎬", "AI Scientist 🤖",
+        "Crypto Millionaire 📈", "Astronaut 🛰️", "President of a Country 🇺🇸",
+        "Secret Agent 🕵️‍♂️", "Professional Gamer 🎮", "Software Engineer 💻",
+        "Teacher 🍎", "Chef 🍳", "Food Delivery Guy 🍔", "Call Center Employee ☎️",
+        "Mechanic 🔧", "Bartender 🍸", "Uber Driver 🚗", "Mall Security Guard 👮",
+        "Garbage Collector 🚮", "Street Sweeper 🧹", "Beggar at Traffic Signal 🤲", 
+        "Slum King 🏚️", "Slut 🚬💋", "Call Girl/Boy 📞🔥", "Rickshaw Puller 🚲",
+        "Fake Guru 🙏 (Scamming people!)", "Bathroom Cleaner 🚽", "Toilet Paper Inspector 🧻", 
+        "Struggling YouTuber 🎥 (0 subscribers!)", "Human Statue 🗿 (Standing in malls for tips)", 
+        "TikTok Dancer 💃 (But no views!)"
+    ];
+
+    let futureJob = jobs[Math.floor(Math.random() * jobs.length)];
+    let success = Math.floor(Math.random() * 100) + 1;
+
+    let message = success < 20 ? "😂 Your life is gonna be rough, bro!" :
+                  success < 50 ? "💪 Work harder if you want to improve!" :
+                  success < 80 ? "🚀 Decent future ahead, keep pushing!" :
+                                "🔥 You're gonna be a legend in your field!";
+
+    document.getElementById("output").innerHTML = `<p>💼 ${name}, your future career: <strong>${futureJob}</strong></p><p>🔥 Success Rate: ${success}%</p><p>${message}</p>`;
+}
+</script>
+
+</body>
+</html>

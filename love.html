@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Love Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>❤️ Love Calculator ❤️</h1>
+    <button onclick="calculateLove()">Find Your Love Score</button>
+    <div id="output"></div>
+    <nav><a href="index.html">🏠 Back to Home</a></nav>
+</div>
+
+<script>
+function calculateLove() {
+    let partner = prompt("Enter your partner's name:");
+    let yourName = prompt("Enter your name:");
+
+    if (!partner || !yourName) {
+        alert("You must enter both names!");
+        return;
+    }
+
+    let lovePercent = Math.floor(Math.random() * 100) + 1;
+    let result = lovePercent < 50 ? "Aukaat he kya teri? 🤡" : "Nice Pair! ❤️🔥";
+
+    document.getElementById("output").innerHTML = `<p>${yourName} + ${partner} = ${lovePercent}% Love 💕</p><p>${result}</p>`;
+}
+</script>
+
+</body>
+</html>
